@@ -1,4 +1,5 @@
 #!/bin/bash
+echo
 if [[ $# -ge 3 ]]; then
 	pos=1
 	if [[ -d $1 ]]; then
@@ -38,9 +39,11 @@ if [[ dat -eq 2 ]]; then
 fi
 
 if [[ pos -eq 1 ]] && [[ dir -eq 1 ]] && [[ fil -eq 1 ]] && [[ dat -eq 1 ]]; then
-	cd $1
 	for year in ${@:3}; do
-		mkdir $year
-	done 
+		echo $year
+	done
+	for alumno in $(cat $2); do
+		echo $alumno
+	done
 fi
 
